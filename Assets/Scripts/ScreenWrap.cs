@@ -13,19 +13,25 @@ public class ScreenWrap : MonoBehaviour
 
 	public float buffer = 1.0f;
 	public float distanceZ = 10.0f;
+	public float playerY;
+
 
 
 	// Use this for initialization
 	void Awake ()
 	{
-		leftScreen = Camera.main.ScreenToWorldPoint (new Vector3 (0.0f, 0.0f, distanceZ)).x;
-		rightScreen = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, 0.0f, distanceZ)).x;
+		playerY = gameObject.transform.position.y;
+
+		leftScreen = Camera.main.ScreenToWorldPoint (new Vector3 (0.0f, playerY, distanceZ)).x;
+		rightScreen = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, playerY, distanceZ)).x;
 
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
+		playerY = gameObject.transform.position.y;
+
 		Vector3 GaObjectPos = GaObject.transform.position;
 
 
