@@ -8,6 +8,8 @@ TagManager:
   - Projectile
   - Player 1
   - Player 2
+  - pHealth1
+  - pHealth2
   layers:
   - Default
   - TransparentFX
