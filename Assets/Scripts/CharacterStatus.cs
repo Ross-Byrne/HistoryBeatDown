@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CharacterStatus : MonoBehaviour {
 
@@ -46,5 +47,6 @@ public class CharacterStatus : MonoBehaviour {
 
 	void HandleDeath() {
 		Debug.Log("Died " + this.gameObject.tag);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 }
