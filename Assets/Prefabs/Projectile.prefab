@@ -11,6 +11,8 @@ GameObject:
   - 212: {fileID: 21299230}
   - 50: {fileID: 5011402}
   - 58: {fileID: 5891474}
+  - 114: {fileID: 11448418}
+  - 114: {fileID: 11471030}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -43,11 +45,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!58 &5891474
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -62,6 +64,32 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &11448418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435fa9060f920874b9e6176d0bee1c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  moveSpeed: 7
+--- !u!114 &11471030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf905097c0b49b48a483e3c4d3be315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeOut: 3
+  detachChildren: 0
 --- !u!212 &21299230
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -89,7 +117,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.97794116, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!1001 &100100000
