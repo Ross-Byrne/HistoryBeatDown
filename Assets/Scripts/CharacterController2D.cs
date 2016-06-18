@@ -205,10 +205,9 @@ public class CharacterController2D : MonoBehaviour
 		// reset current vertical motion to 0 prior to jump
 		_vy = 0f;
 		// add a force in the up direction
-		_rigidbody.AddForce (new Vector2 (0, jumpForce));
-
+		_rigidbody.AddForce (new Vector2 (0, 600));
 		// play the jump sound
-		//PlaySound (jumpSFX);	
+		PlaySound (jumpSFX);	
 	}
 
 	// do what needs to be done to freeze the player
