@@ -9,8 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 447722}
   - 33: {fileID: 3300166}
-  - 65: {fileID: 6518090}
   - 23: {fileID: 2313622}
+  - 61: {fileID: 6108012}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -123,18 +123,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159416}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6518090
-BoxCollider:
+--- !u!61 &6108012
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 159416}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
 --- !u!114 &11433338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,6 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171060ba7459c54418690474c888bd40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screenWidth: 0
+  screenHeight: 0
+  tileSize: 0
+  screenWidthInTiles: 0
+  screenHeightInTiles: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
