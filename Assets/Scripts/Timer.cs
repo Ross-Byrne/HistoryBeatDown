@@ -1,22 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour {
+public class Timer : MonoBehaviour
+{
 
 	public Text clockCountDown;
 
-	private float time = 90.0f;
+	private float time1 = 90.0f;
 
 	
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
-		time -= Time.deltaTime;
+		time1 -= Time.deltaTime;
+		clockCountDown.text = Mathf.Round (time1).ToString();
 
-		float mins = time / 60;
-		float secs = time % 60;
-
-		clockCountDown.text = string.Format ("{0:00} : {1:00}", mins, secs);
+		if(time1 < 0)
+		{
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+		}
 	}
 }
