@@ -108,13 +108,15 @@ public class CharacterController2D : MonoBehaviour
 		if (_vx != 0)
 		{
 			isRunning = true;
-			_animator.Play ("Running");
+			_animator.enabled = true;
+			Debug.Log ("Running");
 
 		}
 		else
 		{
 			isRunning = false;
-			_animator.Stop ();
+			_animator.enabled = false;
+			Debug.Log ("Not Running");
 		}
 
 		// set the running animation state
