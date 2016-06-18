@@ -147,7 +147,7 @@ public class CharacterController2D : MonoBehaviour
 		// if moving up then don't collide with platform layer
 		// this allows the player to jump up through things on the platform layer
 		// NOTE: requires the platforms to be on a layer named "Platform"
-		//Physics2D.IgnoreLayerCollision (_playerLayer, _platformLayer, (_vy > 0.0f)); 
+		Physics2D.IgnoreLayerCollision (_playerLayer, _platformLayer, (_vy > 0.0f)); 
 	}
 
 	// Checking to see if the sprite should be flipped

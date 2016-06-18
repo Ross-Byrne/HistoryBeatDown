@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.092, y: -1.221, z: 0}
+  m_LocalPosition: {x: 0.092, y: 0.8, z: 0}
   m_LocalScale: {x: 2.7230308, y: 5.0975194, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -195,11 +195,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  jumpForce: 300
+  jumpForce: 600
   playerHealth: 1
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
   groundCheck: {fileID: 435240}
   playerCanMove: 1
   coinSFX: {fileID: 0}
