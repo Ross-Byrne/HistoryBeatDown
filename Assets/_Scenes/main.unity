@@ -368,10 +368,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 478708, guid: 6e67249b9a2b58a49862b0fe3b11e263, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 105044, guid: 6e67249b9a2b58a49862b0fe3b11e263, type: 2}
-      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
