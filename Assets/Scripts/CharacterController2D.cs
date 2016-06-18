@@ -41,7 +41,7 @@ public class CharacterController2D : MonoBehaviour
 	float _vy;
 
 	// player tracking
-	bool facingRight = true;
+	public bool facingRight = true;
 	bool isGrounded = false;
 	bool isRunning = false;
 	bool canDoubleJump = false;
@@ -105,14 +105,12 @@ public class CharacterController2D : MonoBehaviour
 		{
 			isRunning = true;
 			_animator.enabled = true;
-			Debug.Log ("Running");
 
 		}
 		else
 		{
 			isRunning = false;
 			_animator.enabled = false;
-			Debug.Log ("Not Running");
 		}
 
 		// set the running animation state
@@ -126,7 +124,6 @@ public class CharacterController2D : MonoBehaviour
 		// down to the groundCheck position and see if collected with gameobjects on the
 		// whatIsGround layer
 		isGrounded = Physics2D.Linecast (_transform.position, groundCheck.position, whatIsGround);  
-		Debug.Log (isGrounded);
 
 		// allow double jump after grounded
 		if (isGrounded)

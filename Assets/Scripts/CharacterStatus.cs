@@ -24,7 +24,6 @@ public class CharacterStatus : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D coll)
 	{
-		Debug.Log (coll);
 		if (coll.gameObject.tag == "Projectile") 
 		{
 			Destroy (coll.gameObject);
