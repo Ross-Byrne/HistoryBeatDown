@@ -9,7 +9,7 @@ public class MoveFoward : MonoBehaviour
 
 	void Awake(){
 
-		playerTransform = GameObject.Find ("Player").GetComponent<Transform> ();
+		//playerTransform = GameObject.Find ("Player").GetComponent<Transform> ();
 
 	}
 

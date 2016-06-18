@@ -56,6 +56,8 @@ public class CharacterController2D : MonoBehaviour
 	// number of layer that Platforms are on (setup in Awake)
 	int _platformLayer;
 
+	private bool isPlayer1;
+
 	void Awake ()
 	{
 		// get a reference to the components we are going to be changing and store a reference for efficiency purposes
@@ -77,11 +79,19 @@ public class CharacterController2D : MonoBehaviour
 			_audio = gameObject.AddComponent<AudioSource> ();
 		}
 
+		isPlayer1 = this.gameObject.tag == "Player 1";
+
 		// determine the player's specified layer
 		_playerLayer = this.gameObject.layer;
 
 		// determine the platform's specified layer
 		_platformLayer = LayerMask.NameToLayer ("Platform");
+	}
+
+	public string ControlForPlayer (string control) 
+	{
+		string extension = isPlayer1 ? "_P1" : "_P2";
+		return control + extension;
 	}
 
 	// this is where most of the player controller magic happens each game event loop
@@ -92,7 +102,7 @@ public class CharacterController2D : MonoBehaviour
 			return;
 
 		// determine horizontal velocity change based on the horizontal input
-		_vx = Input.GetAxisRaw ("Horizontal");
+		_vx = Input.GetAxisRaw (ControlForPlayer("Horizontal"));
 
 		// Determine if running based on the horizontal movement
 		if (_vx != 0)
@@ -124,11 +134,11 @@ public class CharacterController2D : MonoBehaviour
 		// Set the grounded animation states
 		//_animator.SetBool ("Grounded", isGrounded);
 
-		if (isGrounded && Input.GetButtonDown ("Jump")) // If grounded AND jump button pressed, then allow the player to jump
+		if (isGrounded && Input.GetButtonDown (ControlForPlayer("Jump"))) // If grounded AND jump button pressed, then allow the player to jump
 		{
 			DoJump ();
 		}
-		else if (canDoubleJump && Input.GetButtonDown ("Jump"))
+		else if (canDoubleJump && Input.GetButtonDown (ControlForPlayer("Jump")))
 		{
 			DoJump ();
 			canDoubleJump = false;
@@ -136,7 +146,7 @@ public class CharacterController2D : MonoBehaviour
 	
 		// If the player stops jumping mid jump and player is not yet falling
 		// then set the vertical velocity to 0 (he will start to fall from gravity)
-		if (Input.GetButtonUp ("Jump") && _vy > 0f)
+		if (Input.GetButtonUp (ControlForPlayer("Jump")) && _vy > 0f)
 		{
 			_vy = 0f;
 		}

@@ -8,6 +8,13 @@ public class Shoot : MonoBehaviour {
 	public float fireDelay = 0.1f;
 	public float cooldownTimer = 0;
 	//Rigidbody2D _rigidbody;
+
+
+	void Start ()
+	{
+		
+	}
+		
 		
 	// Update is called once per frame
 	void Update () 
@@ -15,13 +22,16 @@ public class Shoot : MonoBehaviour {
 
 		cooldownTimer -= Time.deltaTime;
 
-		if (Input.GetButtonDown("Fire1") && cooldownTimer <= 0) 
+		Debug.Log (this.transform.parent.parent.tag);
+		string fireName = this.transform.parent.parent.tag == "Player 1" ? "Fire_P1" : "Fire_P2";
+
+		if (Input.GetButtonDown(fireName) && cooldownTimer <= 0) 
 		{
 
 			cooldownTimer = fireDelay;
 			// fire projectile
 			GameObject newProjectile = Instantiate (projectile, transform.position, transform.rotation) as GameObject;
-
+			newProjectile.GetComponent<MoveFoward> ().playerTransform = this.transform.parent.parent.transform;
 
 		}
 	
