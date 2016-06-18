@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CharacterStatus : MonoBehaviour {
 
-
+	public int TotalLifePoints = 100;
 	public int LivePoints = 100;
 	public int DamagePerHit = 10;
 
@@ -15,6 +16,7 @@ public class CharacterStatus : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_audio = GetComponent<AudioSource> ();
+		LivePoints = TotalLifePoints;
 	
 	}
 	
@@ -40,7 +42,17 @@ public class CharacterStatus : MonoBehaviour {
 		LivePoints -= DamagePerHit;
 		_audio.PlayOneShot (hitSFX);
 
+		if (gameObject.tag == "Player 1")
+		{
+			GameObject.FindGameObjectWithTag ("pHealth1").GetComponent<Image>().fillAmount = 
+				(float)LivePoints/TotalLifePoints;
 
+		}
+		else
+		{
+			GameObject.FindGameObjectWithTag ("pHealth2").GetComponent<Image>().fillAmount = 
+				(float)LivePoints/TotalLifePoints;
+		}
 		if (LivePoints <= 0)
 			HandleDeath ();
 	}
