@@ -124,7 +124,6 @@ public class CharacterController2D : MonoBehaviour
 		// down to the groundCheck position and see if collected with gameobjects on the
 		// whatIsGround layer
 		isGrounded = Physics2D.Linecast (_transform.position, groundCheck.position, whatIsGround);  
-		Debug.Log (isGrounded);
 
 		// allow double jump after grounded
 		if (isGrounded)

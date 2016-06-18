@@ -28,7 +28,6 @@ public class Shoot : MonoBehaviour {
 
 		cooldownTimer -= Time.deltaTime;
 
-		Debug.Log (this.transform.parent.parent.tag);
 		string fireName = this.transform.parent.parent.tag == "Player 1" ? "Fire_P1" : "Fire_P2";
 
 		if (Input.GetButtonDown(fireName) && cooldownTimer <= 0) 
