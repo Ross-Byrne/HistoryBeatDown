@@ -6,6 +6,12 @@ public class MoveFoward : MonoBehaviour
 	public Transform playerTransform;
 	public float moveSpeed = 7.0f;
 
+	void Awake(){
+
+		playerTransform = GameObject.Find ("Player").GetComponent<Transform> ();
+
+	}
+
 	// Update is called once per frame
 	void Update ()
 	{
