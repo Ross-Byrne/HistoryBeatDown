@@ -124,6 +124,7 @@ public class CharacterController2D : MonoBehaviour
 		// down to the groundCheck position and see if collected with gameobjects on the
 		// whatIsGround layer
 		isGrounded = Physics2D.Linecast (_transform.position, groundCheck.position, whatIsGround);  
+		Debug.Log (isGrounded);
 
 		// allow double jump after grounded
 		if (isGrounded)
@@ -240,86 +241,5 @@ public class CharacterController2D : MonoBehaviour
 		_audio.PlayOneShot (clip);
 	}
 
-	/*
-	// public function to apply damage to the player
-	public void ApplyDamage (int damage)
-	{
-		if (playerCanMove)
-		{
-			playerHealth -= damage;
 
-			if (playerHealth <= 0)
-			{ // player is now dead, so start dying
-				PlaySound (deathSFX);
-				StartCoroutine (KillPlayer ());
-			}
-		}
-	}
-
-	// public function to kill the player when they have a fall death
-	public void FallDeath ()
-	{
-		if (playerCanMove)
-		{
-			playerHealth = 0;
-			PlaySound (fallSFX);
-			StartCoroutine (KillPlayer ());
-		}
-	}
-
-
-	// coroutine to kill the player
-	IEnumerator KillPlayer ()
-	{
-		if (playerCanMove)
-		{
-			// freeze the player
-			FreezeMotion ();
-
-			// play the death animation
-			_animator.SetTrigger ("Death");
-			
-			// After waiting tell the GameManager to reset the game
-			yield return new WaitForSeconds (2.0f);
-
-			if (GameManager.gm) // if the gameManager is available, tell it to reset the game
-				GameManager.gm.ResetGame ();
-			else // otherwise, just reload the current level
-				Application.LoadLevel (Application.loadedLevelName);
-		}
-	}
-
-	public void CollectCoin (int amount)
-	{
-		PlaySound (coinSFX);
-
-		if (GameManager.gm) // add the points through the game manager, if it is available
-			GameManager.gm.AddPoints (amount);
-	}
-
-	// public function on victory over the level
-	public void Victory ()
-	{
-		PlaySound (victorySFX);
-		FreezeMotion ();
-		_animator.SetTrigger ("Victory");
-
-		if (GameManager.gm) // do the game manager level compete stuff, if it is available
-			GameManager.gm.LevelCompete ();
-	}
-
-	// public function to respawn the player at the appropriate location
-	public void Respawn (Vector3 spawnloc)
-	{
-		UnFreezeMotion ();
-		playerHealth = 1;
-		_transform.parent = null;
-		_transform.position = spawnloc;
-		_animator.SetTrigger ("Respawn");
-	}
-
-	public void EnemyBounce()
-	{
-		DoJump ();
-	}*/
 }

@@ -31,6 +31,7 @@ GameObject:
   - 58: {fileID: 5847322}
   - 82: {fileID: 8277088}
   - 95: {fileID: 9537196}
+  - 114: {fileID: 11476188}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player 1
@@ -453,6 +454,19 @@ MonoBehaviour:
   buffer: 1
   distanceZ: 10
   playerY: 0
+--- !u!114 &11476188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86eb9afa2444744919b6a2f536af09ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LivePoints: 100
+  DamagePerHit: 10
 --- !u!114 &11486086
 MonoBehaviour:
   m_ObjectHideFlags: 1
