@@ -5,6 +5,7 @@ public class MoveFoward : MonoBehaviour
 {
 	public Transform playerTransform;
 	public float moveSpeed = 7.0f;
+	public string direction = "Left";
 
 	void Awake(){
 
@@ -12,11 +13,25 @@ public class MoveFoward : MonoBehaviour
 
 	}
 
+	void Start(){
+
+		if (playerTransform.localScale.x > 0)
+		{
+
+			direction = "Right";
+		}
+		else
+		{
+			direction = "Left";
+		}
+
+	}
+
 	// Update is called once per frame
 	void Update ()
 	{
 
-		if (playerTransform.localScale.x > 0)
+		if (direction == "Right")
 		{
 
 			Vector3 pos = transform.position;

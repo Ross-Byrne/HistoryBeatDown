@@ -5,7 +5,7 @@ public class Shoot : MonoBehaviour {
 
 	public GameObject projectile;
 	public float power = 10.0f;
-	public float fireDelay = 0.25f;
+	public float fireDelay = 0.1f;
 	public float cooldownTimer = 0;
 	//Rigidbody2D _rigidbody;
 		
