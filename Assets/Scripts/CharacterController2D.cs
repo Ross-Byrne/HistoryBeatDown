@@ -37,7 +37,7 @@ public class CharacterController2D : MonoBehaviour
 	// store references to components on the gameObject
 	Transform _transform;
 	Rigidbody2D _rigidbody;
-	//Animator _animator;
+	Animator _animator;
 	AudioSource _audio;
 
 	// hold player motion in this timestep
@@ -67,9 +67,9 @@ public class CharacterController2D : MonoBehaviour
 		if (_rigidbody == null) // if Rigidbody is missing
 			Debug.LogError ("Rigidbody2D component missing from this gameobject");
 		
-		/*_animator = GetComponent<Animator> ();
+		_animator = GetComponent<Animator> ();
 		if (_animator == null) // if Animator is missing
-			Debug.LogError ("Animator component missing from this gameobject");*/
+			Debug.LogError ("Animator component missing from this gameobject");
 		
 		_audio = GetComponent<AudioSource> ();
 		if (_audio == null)
@@ -108,14 +108,18 @@ public class CharacterController2D : MonoBehaviour
 		if (_vx != 0)
 		{
 			isRunning = true;
+			_animator.Play ("Running");
+
 		}
 		else
 		{
 			isRunning = false;
+			_animator.Stop ();
 		}
 
 		// set the running animation state
 		//_animator.SetBool ("Running", isRunning);
+
 
 		// get the current vertical velocity from the rigidbody component
 		_vy = _rigidbody.velocity.y;
