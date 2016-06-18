@@ -26,11 +26,7 @@ public class CharacterController2D : MonoBehaviour
 	public bool playerCanMove = true;
 
 	// SFXs
-	public AudioClip coinSFX;
-	public AudioClip deathSFX;
-	public AudioClip fallSFX;
 	public AudioClip jumpSFX;
-	public AudioClip victorySFX;
 
 	// private variables below
 
