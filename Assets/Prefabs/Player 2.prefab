@@ -426,6 +426,7 @@ MonoBehaviour:
   power: 200
   fireDelay: 0.25
   cooldownTimer: 0
+  shootSFX: {fileID: 8300000, guid: 0622fd2ddc517bf4fa312b5be3987393, type: 3}
 --- !u!114 &11476318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -445,10 +446,7 @@ MonoBehaviour:
     m_Bits: 768
   groundCheck: {fileID: 460924}
   playerCanMove: 1
-  coinSFX: {fileID: 0}
-  deathSFX: {fileID: 0}
-  fallSFX: {fileID: 0}
-  jumpSFX: {fileID: 0}
+  jumpSFX: {fileID: 8300000, guid: 6b49c26b106d92a4d977d8454d734c3c, type: 3}
   victorySFX: {fileID: 0}
 --- !u!114 &11478758
 MonoBehaviour:
@@ -463,6 +461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LivePoints: 100
   DamagePerHit: 10
+  hitSFX: {fileID: 8300000, guid: 2599eb6ced0864841a5a0baa26954db3, type: 3}
 --- !u!114 &11490476
 MonoBehaviour:
   m_ObjectHideFlags: 1

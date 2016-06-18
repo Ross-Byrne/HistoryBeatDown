@@ -9,10 +9,16 @@ public class Shoot : MonoBehaviour {
 	public float cooldownTimer = 0;
 	//Rigidbody2D _rigidbody;
 
+	public AudioClip shootSFX;
+
+	AudioSource _audio;
+
+
 
 	void Start ()
 	{
-		
+		_audio = GetComponent<AudioSource> ();
+
 	}
 		
 		
@@ -31,6 +37,8 @@ public class Shoot : MonoBehaviour {
 			cooldownTimer = fireDelay;
 			// fire projectile
 			GameObject newProjectile = Instantiate (projectile, transform.position, transform.rotation) as GameObject;
+			_audio.PlayOneShot (shootSFX);
+
 			newProjectile.GetComponent<MoveFoward> ().playerTransform = this.transform.parent.parent.transform;
 
 		}

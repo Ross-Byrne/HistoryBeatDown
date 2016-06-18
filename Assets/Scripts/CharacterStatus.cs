@@ -7,8 +7,13 @@ public class CharacterStatus : MonoBehaviour {
 	public int LivePoints = 100;
 	public int DamagePerHit = 10;
 
+	public AudioClip hitSFX;
+
+	AudioSource _audio;
+
 	// Use this for initialization
 	void Start () {
+		_audio = GetComponent<AudioSource> ();
 	
 	}
 	
@@ -33,6 +38,8 @@ public class CharacterStatus : MonoBehaviour {
 		//todo
 		//Debug.Log("Hit " + this.gameObject.tag);
 		LivePoints -= DamagePerHit;
+		_audio.PlayOneShot (hitSFX);
+
 
 		if (LivePoints <= 0)
 			HandleDeath ();
