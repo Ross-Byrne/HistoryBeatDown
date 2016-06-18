@@ -11,9 +11,9 @@ GameObject:
   - 33: {fileID: 3300166}
   - 23: {fileID: 2313622}
   - 61: {fileID: 6108012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ GameObject:
   - 4: {fileID: 478708}
   m_Layer: 0
   m_Name: World
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
