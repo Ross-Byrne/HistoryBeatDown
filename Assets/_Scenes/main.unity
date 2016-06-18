@@ -99,7 +99,7 @@ GameObject:
   - 81: {fileID: 228473254}
   m_Layer: 0
   m_Name: MainCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.393415
+  orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -341,6 +341,10 @@ Prefab:
     - target: {fileID: 6166310, guid: 6e67249b9a2b58a49862b0fe3b11e263, type: 2}
       propertyPath: m_Size.y
       value: 0.32135457
+      objectReference: {fileID: 0}
+    - target: {fileID: 485048, guid: 6e67249b9a2b58a49862b0fe3b11e263, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.44
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e67249b9a2b58a49862b0fe3b11e263, type: 2}
